@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 // Components
 import Nav from './Components/Nav-Component';
 // Pages
@@ -9,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Home />
+      <Home/>
     </div>
   );
 }
