@@ -1,17 +1,18 @@
 import * as React from 'react';
+import Movie from "../Utils/MovieInterface";
 import '../Styles/HeaderStyled.css';
 import fetchMovieData from "../Utils/APICall";
 
 
-class HeaderComponent extends React.Component<any, any> {
+class HeaderComponent extends React.Component<any, Movie> {
     constructor(props: any) {
         super(props)
         this.state = {
-            id: undefined,
-            title: undefined,
-            poster: undefined,
-            overview: undefined,
-            votes: undefined
+            id: 0,
+            title: '',
+            poster: '',
+            overview: '',
+            votes: 0
 
         }
     }
