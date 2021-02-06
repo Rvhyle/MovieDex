@@ -2,53 +2,62 @@ import * as React from 'react';
 import '../Styles/HeaderStyled.css';
 import fetchMovieData from "../Utils/APICall";
 
-const HeaderComponent = () => {
 
-    const [movie, setMovie] = React.useState({
-        id: undefined,
-        title: undefined,
-        poster: undefined,
-        overview: undefined,
-        votes: undefined
-    });
+class HeaderComponent extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props)
+        this.state = {
+            id: undefined,
+            title: undefined,
+            poster: undefined,
+            overview: undefined,
+            votes: undefined
 
-    // const [fetchStatus, setStatus] = React.useState(false)
+        }
+    }
 
-    // Call to TMDb for movie info
-    React.useEffect(() => {
-        fetchMovieData('now_playing', 0)
+    //Randomly picks an index between 0 and the max number input
+    indexPicker = (max: number) => {
+        let num = Math.floor(Math.random() * max)
+        return num;
+    }
+
+    componentDidMount() {
+        console.log("Mounted")
+        fetchMovieData('now_playing', this.indexPicker(15))
             .then((res: any) => {
-                setMovie(prevState => ({
-                    ...prevState,
+                this.setState({
                     id: res.id,
                     title: res.title,
                     poster: res.backdrop_path,
                     overview: res.overview,
                     votes: res.vote_average
-                }))
+                })
+
             })
             .catch((error: any) => {
                 console.log(error)
             })
+    }
 
-    }, [])
 
-    return (
-        <div className="header-container">
-            <img className="header-img" src={`https://image.tmdb.org/t/p/original/${movie.poster}`}
-                 alt="Wonder Woman 1984"/>
-            <div className="header-info absolute">
-                <div className="header-title flex items-center flex-wrap">
-                    <h1>{movie.title}</h1>
-                    <span>Rating {movie.votes}/10 </span>
+    render() {
+        return (
+            <div className="header-container">
+                <img className="header-img" src={`https://image.tmdb.org/t/p/original/${this.state.poster}`}
+                     alt="Wonder Woman 1984"/>
+                <div className="header-info absolute">
+                    <div className="header-title flex items-center flex-wrap">
+                        <h1>{this.state.title}</h1>
+                        <span>Rating {this.state.votes}/10 </span>
+                    </div>
+                    <h3>{this.state.overview}</h3>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">Watch Trailer</a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">Watch Clip</a>
                 </div>
-                <h3>{movie.overview}</h3>
-                <a href="https://www.youtube.com/watch?v=XW2E2Fnh52w" target="_blank">Watch Trailer</a>
-                <a href="https://www.youtube.com/watch?v=VFfQmnYye4o" target="_blank">Watch Clip</a>
             </div>
-        </div>
-    )
+        )
+    }
 }
-
 
 export default HeaderComponent;
