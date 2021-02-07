@@ -1,5 +1,5 @@
 import * as React from 'react';
-import fetchMovieData from "../Utils/APICall";
+import fetchMovieData from "../Utils/FetchAPI";
 import Movie from "../Utils/MovieInterface";
 
 class PopularComponent extends React.Component<any, Movie> {
@@ -14,9 +14,32 @@ class PopularComponent extends React.Component<any, Movie> {
         }
     }
 
+    //Will hold an array of Movie objects
+    popularMovies : any = []
+
+    getPopularMovies = (index : number) => {
+        fetchMovieData('popular',index)
+            .then(res => {
+                this.popularMovies.push(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    componentDidMount() {
+        let count : number = 6;
+        for (let i : number = 0; i < count; i++) {
+            this.getPopularMovies(i);
+        }
+
+    }
+
     render() {
         return (
-            <div></div>
+            <div>
+                <h1>Popular Movies</h1>
+            </div>
         )
     }
 }

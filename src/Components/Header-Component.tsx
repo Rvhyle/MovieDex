@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Movie from "../Utils/MovieInterface";
 import '../Styles/HeaderStyled.css';
-import fetchMovieData from "../Utils/APICall";
+import fetchMovieData from "../Utils/FetchAPI";
 
 
 class HeaderComponent extends React.Component<any, Movie> {
