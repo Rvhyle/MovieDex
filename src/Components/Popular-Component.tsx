@@ -1,47 +1,23 @@
-import * as React from 'react';
-import fetchMovieData from "../Utils/FetchAPI";
-import Movie from "../Utils/MovieInterface";
+import React, {useEffect} from 'react';
 
-class PopularComponent extends React.Component<any, Movie> {
-    constructor(props : any) {
-        super(props);
-        this.state = {
-            id : 0,
-            title: '',
-            poster: '',
-            overview: '',
-            votes: 0
-        }
-    }
 
-    //Will hold an array of Movie objects
-    popularMovies : any = []
+// @ts-ignore
+const PopularComponent = ({popular}) => {
 
-    getPopularMovies = (index : number) => {
-        fetchMovieData('popular',index)
-            .then(res => {
-                this.popularMovies.push(res)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
+    //Reduces Array down to 6 Objects
+    let reducedArray = [...popular].slice(0,6)
 
-    componentDidMount() {
-        let count : number = 6;
-        for (let i : number = 0; i < count; i++) {
-            this.getPopularMovies(i);
-        }
-
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>Popular Movies</h1>
-            </div>
-        )
-    }
+    return(
+        <div>
+            <h1>Popular Movies</h1>
+            <ul>
+                {[...reducedArray].map(movie => {
+                    return <li key={movie.id}>{movie.title}</li>
+                })}
+            </ul>
+        </div>
+    )
 }
+
 
 export default PopularComponent;
