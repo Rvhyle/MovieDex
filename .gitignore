@@ -19,7 +19,6 @@
 .env.production.local
 
 #Files
-src/Utils/APIKey.tsx
 
 
 npm-debug.log*
