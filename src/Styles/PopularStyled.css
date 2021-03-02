@@ -1,3 +1,14 @@
-li {
-    color: black;
+.popular-container {
+    max-width: 1920px;
+    margin: auto;
 }
+
+.cool {
+    color:black;
+    z-index: 5;
+    width: 75%;
+    margin: auto;
+}
+
+
+
