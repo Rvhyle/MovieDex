@@ -13,7 +13,6 @@ class HomePage extends React.Component<any, any> {
         }
     }
 
-    cool : any = [];
     //Fetch Data
     //============================================================================
     //Header
