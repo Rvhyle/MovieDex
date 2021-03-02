@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Styles/HeaderStyled.css';
-
 //@ts-ignore
 const HeaderComponent = ({header}) => {
     return (
