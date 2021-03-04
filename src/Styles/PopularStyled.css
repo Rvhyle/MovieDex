@@ -1,14 +1,36 @@
 .popular-container {
     max-width: 1920px;
+    height: 900px;
+
     margin: auto;
 }
 
-.cool {
-    color:black;
-    z-index: 5;
-    width: 75%;
+.popular-title {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.slide-item {
+    position: relative;
+    width: 90%;
+    height: 700px;
     margin: auto;
 }
+
+.popular-poster {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
 
 
 
