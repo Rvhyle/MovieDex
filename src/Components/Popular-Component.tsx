@@ -19,7 +19,7 @@ const PopularComponent = ({popular}) => {
     }
 
     //Reduces Array down to 6 Objects
-    let reducedArray = [...popular].slice(0, 6)
+    let reducedArray : Array<any> = [...popular].slice(0, 6)
 
     return (
         <div className="popular-container">
