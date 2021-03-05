@@ -1,13 +1,13 @@
 import React from 'react';
 // Components
-import Nav from './Components/Nav-Component';
+import Nav from './Components/HomePage/Nav-Component';
 // Pages
 import Home from './Pages/HomePage';
 
 function App() {
   return (
     <div className="App">
-      <Nav />
+      <Nav/>
       <Home/>
     </div>
   );
