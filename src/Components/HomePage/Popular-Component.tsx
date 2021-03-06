@@ -17,7 +17,7 @@ const PopularComponent = ({popular}) => {
         slidesToScroll: 2,
         draggable: true,
         autoplay: true,
-        autoplaySpeed: 1000
+        autoplaySpeed: 3000
     }
 
     //Reduces Array down to 6 Objects
