@@ -23,9 +23,9 @@ const NewMoviesComponent = ({newMovie}) => {
                     )
                 })}
                     </div>
-                    </div>
-                    )
-                }
+            </div>
+    )
+}
 
 
-                export default NewMoviesComponent;
+export default NewMoviesComponent;
