@@ -2,10 +2,10 @@ import React from 'react';
 import Slider from "react-slick";
 import LazyLoad from 'react-lazyload';
 //Styles
+import '../../index.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '../../Styles/SliderStyles.css'
-import '../../Styles/PopularStyled.css';
+import '../../Styles/SliderStyles.css';
 import '../../Styles/poster-styled.css';
 
 // @ts-ignore
@@ -17,15 +17,15 @@ const PopularComponent = ({popular}) => {
         slidesToScroll: 2,
         draggable: true,
         autoplay: true,
-        autoplaySpeed: 3000
+        autoplaySpeed: 1000
     }
 
     //Reduces Array down to 6 Objects
-    let reducedArray = [...popular].slice(0, 6);
+    let reducedArray = [...popular].slice(0, 15);
 
     return (
-        <div className="popular-container">
-            <h1 className="popular-title">What's Popular</h1>
+        <div className="slider-container">
+            <h1 className="title">What's Popular</h1>
             <Slider className="w-4/5 m-auto" {...settings}>
                 {[...reducedArray].map(movie => {
                     return (

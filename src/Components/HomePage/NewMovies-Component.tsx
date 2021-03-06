@@ -1,5 +1,6 @@
 import React from "react";
 import LazyLoad from 'react-lazyload';
+import '../../index.css';
 import '../../Styles/NewMoviesStyled.css';
 import '../../Styles/poster-styled.css';
 
@@ -10,7 +11,7 @@ const NewMoviesComponent = ({newMovie}) => {
 
     return (
         <div className="newMovies-container">
-            <h1 id="upcoming-title">Upcoming Movies</h1>
+            <h1 className="title">Upcoming Movies</h1>
             <div className="newMovies_poster-container flex flex-wrap justify-between">
                 {[...reducedArray].map((movie) => {
                     return (
@@ -22,8 +23,8 @@ const NewMoviesComponent = ({newMovie}) => {
                         </div>
                     )
                 })}
-                    </div>
             </div>
+        </div>
     )
 }
 
