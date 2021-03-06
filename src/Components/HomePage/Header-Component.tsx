@@ -1,11 +1,14 @@
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 import '../../Styles/HeaderStyled.css';
 //@ts-ignore
 const HeaderComponent = ({header}) => {
     return (
         <div className="header-container">
-            <img className="header-img" src={`https://image.tmdb.org/t/p/original/${header.poster}`}
-                 alt={header.title}/>
+            <LazyLoad once>
+                <img className="header-img" src={`https://image.tmdb.org/t/p/original/${header.poster}`}
+                     alt={header.title}/>
+            </LazyLoad>
             <div className="header-info absolute">
                 <div className="header-title flex items-center flex-wrap">
                     <h1>{header.title}</h1>

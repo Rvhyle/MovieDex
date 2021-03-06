@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
+import LazyLoad from 'react-lazyload';
 //Styles
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -30,8 +31,10 @@ const PopularComponent = ({popular}) => {
                     return (
                         <div key={movie.id}>
                             <div className="slide-item">
-                                <img className="poster" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                                     alt={movie.title}/>
+                                <LazyLoad once>
+                                    <img className="poster" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                                         alt={movie.title}/>
+                                </LazyLoad>
                             </div>
                         </div>
                     )
