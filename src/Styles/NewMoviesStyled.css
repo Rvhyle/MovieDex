@@ -1,7 +1,7 @@
 .newMovies-container {
     position: relative;
     max-width: 1920px;
-    height: 1920px;
+    height: auto;
 
     margin: auto;
     margin-top: 20rem;
@@ -39,14 +39,14 @@
     position: relative;
     width: 80%;
     margin: auto;
-    top: 50%;
-    transform: translateY(-50%);
+    padding-top: 150px;
+    padding-bottom: 150px;
 
     row-gap: 50px;
 }
 
 .movie-posters{
-    width: 30%;
+    width: 400px;
     height: 700px;
     border-radius: 50px;
     background-color: white;
