@@ -24,3 +24,15 @@ body {
     font-weight: bolder;
     font-size: 2rem;
 }
+
+button:active  {
+    outline: none;
+}
+
+
+/*Phone*/
+@media screen and (max-width: 480px){
+    .title{
+        font-size: 1.5rem;
+    }
+}

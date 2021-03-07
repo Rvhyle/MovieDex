@@ -1,13 +1,14 @@
 .nav-container {
     top: 0;
     z-index: 10;
-    height: 70px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     background-color: black;
 }
 
 .logo {
     color: white;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 #logospan {
@@ -16,6 +17,69 @@
 
 ul>li{
     color: white;
+}
+
+/*Burger Menu*/
+.openBurger {
+    display: none;
+}
+
+.closeBurger {
+    display: none;
+}
+
+.open {
+    display: none;
+}
+
+.close {
+    overflow: hidden;
+    height: 0;
+    transition: height 1s;
+}
+
+.close > li {
+    display: none;
+}
+
+
+/*Phone*/
+@media screen and (max-width: 480px) {
+    .nav_content-container{
+        justify-content: space-between;
+    }
+
+    .open{
+        display: block;
+        height: 100px;
+        text-align: center;
+        justify-content: center;
+        transition: height 1s;
+        overflow: hidden;
+    }
+
+    .open > li {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .dv{
+        display: none;
+    }
+
+    .logo {
+        padding: 0;
+    }
+
+    .openBurger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .closeBurger {
+        display: none;
+        cursor: pointer;
+    }
 }
 
 

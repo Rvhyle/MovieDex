@@ -68,6 +68,30 @@
 
 /*Media Queries*/
 
+/*Phone*/
+@media screen and (max-width: 480px) {
+    .header-container{
+        height: 700px;
+    }
+
+    .header-img{
+        height: 700px;
+    }
+
+    .header-info > .header-title > h1{
+        font-size: 3.5rem;
+    }
+
+    .header-info > h3 {
+        font-size: 1.2rem;
+    }
+
+    .header-info > a{
+        width: 120px;
+        margin-right: 1rem;
+    }
+}
+
 
 
 

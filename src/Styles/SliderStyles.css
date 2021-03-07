@@ -44,7 +44,7 @@
 /*Media Queries*/
 
 /*Laptop*/
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1440px) {
     .slide-item{
         height:500px;
     }
@@ -60,3 +60,22 @@
         width: 95%;
     }
 }
+
+/*Phone*/
+@media screen and (max-width: 480px){
+    .slide-item{
+        width: 90%;
+        height: 350px;
+    }
+
+    .slider-container{
+        width: 75%;
+        height: 500px;
+    }
+}
+
+
+
+
+
+

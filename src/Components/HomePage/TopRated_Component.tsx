@@ -25,6 +25,21 @@ const TopRatedComponent = ({topMovies}) => {
                     slidesToShow: 2,
                     slidesToScroll: 3,
                     infinite: true,
+                    draggable: true,
+                    autoplay: true,
+                    autoplaySpeed: 3000
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    draggable: true,
+                    autoplay: true,
+                    infinite: true,
+                    autoplaySpeed: 3000,
+                    accessibility: false
                 }
             }]
     }

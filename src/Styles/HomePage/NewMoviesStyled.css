@@ -63,7 +63,7 @@
 
 /*Media Queries*/
 
-@media screen and (max-width: 1366px){
+@media screen and (max-width: 1440px){
     .movie-posters {
         width:350px;
         height: 500px;
@@ -86,6 +86,26 @@
 
     .newMovie {
         width: 300px;
+    }
+}
+
+/*Phone*/
+@media screen and (max-width: 480px) {
+    .newMovie {
+        height: 350px;
+        width: 250px;
+    }
+    .movie-posters {
+        width: 250px;
+        height: 350px;
+    }
+
+    .newMovies_poster-container{
+        justify-content: center;
+    }
+
+    .newMovies_poster-container{
+        padding-bottom: 1rem;
     }
 }
 

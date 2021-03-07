@@ -10,8 +10,15 @@
 /*Media Queries*/
 
 /*Laptop*/
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1440px) {
     .poster{
         height:500px;
+    }
+}
+
+/*Phone*/
+@media screen and (max-width: 480px) {
+    .poster{
+        height: 350px;
     }
 }
