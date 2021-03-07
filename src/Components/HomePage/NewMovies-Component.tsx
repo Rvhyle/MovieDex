@@ -12,7 +12,7 @@ const NewMoviesComponent = ({newMovie}) => {
     return (
         <div className="newMovies-container">
             <h1 className="title">Upcoming Movies</h1>
-            <div className="newMovies_poster-container flex flex-wrap justify-between">
+            <div className="newMovies_poster-container flex flex-wrap justify-around">
                 {[...reducedArray].map((movie) => {
                     return (
                         <div className="movie-posters" key={movie.id}>
