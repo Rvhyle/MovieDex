@@ -1,6 +1,6 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
-import '../../Styles/HeaderStyled.css';
+import '../../Styles/HomePage/HeaderStyled.css';
 //@ts-ignore
 const HeaderComponent = ({header}) => {
     return (

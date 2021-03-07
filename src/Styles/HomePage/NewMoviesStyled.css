@@ -59,3 +59,38 @@
     border-radius: 50px;
     background-color: white;
 }
+
+
+/*Media Queries*/
+
+@media screen and (max-width: 1366px){
+    .movie-posters {
+        width:350px;
+        height: 500px;
+    }
+
+    .newMovies_poster-container{
+        padding-top: 70px;
+    }
+}
+
+/*Tablet*/
+@media screen and (max-width: 768px) {
+    .newMovies_poster-container {
+        justify-content: space-between;
+    }
+
+    .movie-posters {
+        width: 300px;
+    }
+
+    .newMovie {
+        width: 300px;
+    }
+}
+
+
+
+
+
+

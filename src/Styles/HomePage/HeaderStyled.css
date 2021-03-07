@@ -7,6 +7,7 @@
 }
 
 .header-img {
+    z-index: 0;
     width: 100%;
     height: 850px;
     object-fit: cover;
@@ -64,3 +65,20 @@
     background-color: #926bf2;
     border: 2px solid #ffffff;
 }
+
+/*Media Queries*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

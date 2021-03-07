@@ -1,7 +1,7 @@
 import React from "react";
 import LazyLoad from 'react-lazyload';
 import '../../index.css';
-import '../../Styles/NewMoviesStyled.css';
+import '../../Styles/HomePage/NewMoviesStyled.css';
 import '../../Styles/poster-styled.css';
 
 //@ts-ignore
@@ -17,7 +17,7 @@ const NewMoviesComponent = ({newMovie}) => {
                     return (
                         <div className="movie-posters" key={movie.id}>
                             <LazyLoad>
-                                <img className="poster" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                                <img className="poster newMovie" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                                      alt={movie.title}/>
                             </LazyLoad>
                         </div>

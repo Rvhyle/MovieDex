@@ -40,3 +40,23 @@
 
     margin: auto;
 }
+
+/*Media Queries*/
+
+/*Laptop*/
+@media screen and (max-width: 1366px) {
+    .slide-item{
+        height:500px;
+    }
+
+    .slider-container {
+        height: 700px;
+    }
+}
+
+/*Tablet*/
+@media screen and (max-width: 768px) {
+    .slide-item{
+        width: 95%;
+    }
+}

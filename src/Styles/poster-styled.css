@@ -5,3 +5,13 @@
     border-radius: 50px;
     object-fit: cover;
 }
+
+
+/*Media Queries*/
+
+/*Laptop*/
+@media screen and (max-width: 1366px) {
+    .poster{
+        height:500px;
+    }
+}
