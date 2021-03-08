@@ -1,8 +1,5 @@
 import React from "react";
 import LazyLoad from 'react-lazyload';
-import '../../index.css';
-import '../../Styles/HomePage/NewMoviesStyled.css';
-import '../../Styles/poster-styled.css';
 
 //@ts-ignore
 const NewMoviesComponent = ({newMovie}) => {

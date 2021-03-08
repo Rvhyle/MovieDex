@@ -102,9 +102,6 @@
 
     .newMovies_poster-container{
         justify-content: center;
-    }
-
-    .newMovies_poster-container{
         padding-bottom: 1rem;
     }
 }

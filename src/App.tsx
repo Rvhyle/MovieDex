@@ -1,15 +1,34 @@
 import React from 'react';
+import {Switch,Route} from 'react-router-dom';
 // Components
-import Nav from './Components/HomePage/Nav-Component';
+import Nav from './Components/Nav-Component';
 import Footer from './Components/Footer';
 // Pages
 import Home from './Pages/HomePage';
+import MoviePage from "./Pages/MoviesPage";
+//Styles
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import './Styles/HomePage/NewMoviesStyled.css';
+import './Styles/HomePage/HeaderStyled.css';
+import './Styles/poster-styled.css';
+import './Styles/MoviePageStyled.css';
+import  './Styles/NavStyled.css';
+import './Styles/SliderStyles.css'
+
 
 function App() {
   return (
     <div className="App">
       <Nav/>
-      <Home/>
+      <Switch>
+          <Route exact path ="/">
+              <Home/>
+          </Route>
+          <Route exact path ="/movies">
+              <MoviePage/>
+          </Route>
+      </Switch>
       <Footer />
     </div>
   );
