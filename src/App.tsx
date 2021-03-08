@@ -9,7 +9,7 @@ import MoviePage from "./Pages/MoviesPage";
 //Styles
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './Styles/HomePage/NewMoviesStyled.css';
+import './Styles/HomePage/PosterGalleryStyled.css';
 import './Styles/HomePage/HeaderStyled.css';
 import './Styles/poster-styled.css';
 import './Styles/MoviePageStyled.css';
