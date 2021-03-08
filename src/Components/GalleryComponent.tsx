@@ -13,7 +13,7 @@ const GalleryComponent = ({items}) => {
                     return(
                         <div className="movie-posters" key={item.id}>
                             <LazyLoad once>
-                                <img className="poster" src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}/>
+                                <img className="poster" src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} alt={item.title}/>
                             </LazyLoad>
                         </div>
                     )

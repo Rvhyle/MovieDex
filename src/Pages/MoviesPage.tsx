@@ -1,5 +1,4 @@
 import React from 'react';
-import LazyLoad from 'react-lazyload';
 import GalleryComponent from "../Components/GalleryComponent";
 import {fetchMovieData} from "../Utils/FetchAPI";
 
