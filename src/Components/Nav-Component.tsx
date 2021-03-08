@@ -32,7 +32,7 @@ const NavComponent = () => {
             {/*Burger Nav*/}
             <ul className={isPressed ? "open font-bold" : "close"}>
                 <li><Link onClick={() => menuClose()} to="/movies">Movies</Link></li>
-                <li><Link to="/shows">Shows</Link></li>
+                <li><Link onClick={() => menuClose()} to="/shows">Shows</Link></li>
             </ul>
         </div>
         )
