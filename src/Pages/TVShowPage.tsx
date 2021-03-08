@@ -1,22 +1,24 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
 import GalleryComponent from "../Components/GalleryComponent";
-import {fetchMovieData} from "../Utils/FetchAPI";
+import {fetchShowData} from "../Utils/FetchAPI";
 
 
-class MoviePage extends React.Component<any,any> {
+
+class TVShowPage extends React.Component<any, any>{
     constructor(props : any) {
-        super(props);
+        super(props)
+
         this.state = {
-            movies : []
+            shows : []
         }
     }
 
-    getMovies() {
-        fetchMovieData('now_playing')
+    getShows() {
+        fetchShowData()
             .then((res : any) => {
                 this.setState({
-                    movies : res
+                    shows : res
                 })
             })
             .catch((error) => {
@@ -25,7 +27,7 @@ class MoviePage extends React.Component<any,any> {
     }
 
     componentDidMount() {
-        this.getMovies();
+        this.getShows();
     }
 
     componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {
@@ -33,10 +35,10 @@ class MoviePage extends React.Component<any,any> {
     }
 
     render() {
-        return(
-            <GalleryComponent items={this.state.movies} />
+        return (
+            <GalleryComponent items={this.state.shows} />
         )
     }
 }
 
-export default MoviePage;
+export default TVShowPage;

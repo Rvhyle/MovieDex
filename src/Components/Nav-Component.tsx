@@ -25,14 +25,14 @@ const NavComponent = () => {
                 <button onClick={() => menuClose()} className={isPressed ? "openBurger" : "closeBurger"}><CloseIcon style={{ fontSize: 30 }}/></button>
                 <ul className="flex gap-14 font-bold dv">
                     <Link to="/movies"><li>Movies</li></Link>
-                    <li>Shows</li>
+                    <Link to="/shows"><li>Shows</li></Link>
                 </ul>
             </div>
 
             {/*Burger Nav*/}
             <ul className={isPressed ? "open font-bold" : "close"}>
                 <li><Link onClick={() => menuClose()} to="/movies">Movies</Link></li>
-                <li>Shows</li>
+                <li><Link to="/shows">Shows</Link></li>
             </ul>
         </div>
         )

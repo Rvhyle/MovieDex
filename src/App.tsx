@@ -6,6 +6,7 @@ import Footer from './Components/Footer';
 // Pages
 import Home from './Pages/HomePage';
 import MoviePage from "./Pages/MoviesPage";
+import TVShowPage from "./Pages/TVShowPage";
 //Styles
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact path ="/movies">
               <MoviePage/>
+          </Route>
+          <Route exact path ="/shows">
+              <TVShowPage/>
           </Route>
       </Switch>
       <Footer />

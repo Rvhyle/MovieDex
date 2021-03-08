@@ -1,5 +1,5 @@
 import * as React from 'react';
-import fetchMovieData from "../Utils/FetchAPI";
+import {fetchMovieData} from "../Utils/FetchAPI";
 //Components
 import HeaderComponent from "../Components/HomePage/Header-Component";
 import PopularComponent from "../Components/HomePage/Popular-Component";
