@@ -13,6 +13,10 @@ class TVShowPage extends React.Component<any, any>{
         }
     }
 
+    /**
+     * Fetch shows array for TV Show Page
+     * fetchShowData returns a promise [Array : objects]
+     */
     getShows() {
         fetchShowData()
             .then((res : any) => {

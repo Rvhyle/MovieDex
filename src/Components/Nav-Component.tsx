@@ -5,12 +5,15 @@ import CloseIcon from '@material-ui/icons/Close';
 
 const NavComponent = () => {
 
+    //Burger Menu State
     let [isPressed,setPressed] = useState(false);
 
+    //menuOpen is invoked when MenuIcon is pressed (isPressed  == true)
     let menuOpen = () => {
         setPressed(true);
     }
 
+    //menuClose is invoked when CloseIcon is pressed (isPressed == false)
     let menuClose = () => {
         setPressed(false);
     }

@@ -11,8 +11,14 @@ class MoviePage extends React.Component<any,any> {
         }
     }
 
-    getMovies() {
-        fetchMovieData('now_playing')
+    /**
+     * Fetch movie array for Movies Page
+     * @param category : String > From MovieDb API
+     * fetchMovieData returns a promise [Array : objects], unlike header component
+     * this sets state to the full array instead of just one object
+     */
+    getMovies(category : string) {
+        fetchMovieData(category)
             .then((res : any) => {
                 this.setState({
                     movies : res
@@ -23,8 +29,9 @@ class MoviePage extends React.Component<any,any> {
             })
     }
 
+    //Life Cycle
     componentDidMount() {
-        this.getMovies();
+        this.getMovies('now_playing');
     }
 
     componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {

@@ -5,6 +5,7 @@ import LazyLoad from 'react-lazyload';
 //@ts-ignore
 const TopRatedComponent = ({topMovies}) => {
 
+    //Slider Settings
     const settings = {
         infinite: true,
         speed: 500,
@@ -39,7 +40,7 @@ const TopRatedComponent = ({topMovies}) => {
             }]
     }
 
-    //Reduced Array
+    //Reduces Array down to 15 Objects
     let reducedArray : Array<any> = [...topMovies].slice(5,20);
 
     return (

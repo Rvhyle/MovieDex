@@ -4,6 +4,7 @@ import LazyLoad from 'react-lazyload';
 //@ts-ignore
 const NewMoviesComponent = ({newMovie}) => {
 
+    //Reduces Array down to 6 Objects
     let reducedArray: Array<any> = [...newMovie].slice(5, 11);
 
     return (

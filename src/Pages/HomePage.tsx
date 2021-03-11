@@ -19,12 +19,15 @@ class HomePage extends React.Component<any, any> {
     }
 
     //Fetch Data
-
-    //Header
-    getMovieHeader() {
+    /**
+     * Fetch movie info for Header Component
+     * @param category : String > From MovieDb API
+     * fetchMovieData returns a promise [Array : objects]
+     */
+    getMovieHeader(category : string) {
         let randIndex = Math.floor(Math.random() * 15)
 
-        fetchMovieData('now_playing')
+        fetchMovieData(category)
             .then((res: any) => {
                 this.setState({
                     movieHeader : {
@@ -41,9 +44,13 @@ class HomePage extends React.Component<any, any> {
             })
     }
 
-    //Popular Movies
-    getPopularMovies() {
-        fetchMovieData('popular')
+    /**
+     * Fetch array of movies for Popular Movies Component
+     * @param category : String > From MovieDb API
+     * fetchMovieData returns a promise [Array : objects]
+     */
+    getPopularMovies(category : string) {
+        fetchMovieData(category)
             .then((res : any) => {
                 this.setState({
                     popularMovies : res
@@ -54,9 +61,13 @@ class HomePage extends React.Component<any, any> {
             })
     }
 
-    //New Movies
-    getNewMovies() {
-        fetchMovieData('upcoming')
+    /**
+     * Fetch array of movies for New Movies Component
+     * @param category : String > From MovieDb API
+     * fetchMovieData returns a promise [Array : objects]
+     */
+    getNewMovies(category : string) {
+        fetchMovieData(category)
             .then((res: any) => {
                 this.setState({
                     newMovies : res
@@ -67,9 +78,13 @@ class HomePage extends React.Component<any, any> {
             })
     }
 
-    //Top Rated Movies
-    getTopMovies() {
-        fetchMovieData('top_rated')
+    /**
+     * Fetch array of movies for Top Movies Component
+     * @param category : String > From MovieDb API
+     * fetchMovieData returns a promise [Array : objects]
+     */
+    getTopMovies(category : string) {
+        fetchMovieData(category)
             .then((res : any) => {
                 this.setState({
                     topRated : res
@@ -83,10 +98,10 @@ class HomePage extends React.Component<any, any> {
 
     //Life Cycle
     componentDidMount() {
-        this.getMovieHeader();
-        this.getPopularMovies();
-        this.getNewMovies();
-        this.getTopMovies();
+        this.getMovieHeader('now_playing');
+        this.getPopularMovies('popular');
+        this.getNewMovies('upcoming');
+        this.getTopMovies('top_rated');
     }
 
     componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {

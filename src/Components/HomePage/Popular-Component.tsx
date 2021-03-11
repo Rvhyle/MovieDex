@@ -4,6 +4,8 @@ import LazyLoad from 'react-lazyload';
 
 // @ts-ignore
 const PopularComponent = ({popular}) => {
+
+    //Slider Settings
     const settings = {
         infinite: true,
         speed: 500,
@@ -38,7 +40,7 @@ const PopularComponent = ({popular}) => {
             }]
     }
 
-    //Reduces Array down to 6 Objects
+    //Reduces Array down to 15 Objects
     let reducedArray = [...popular].slice(0, 15);
 
     return (

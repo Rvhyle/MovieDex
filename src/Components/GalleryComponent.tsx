@@ -9,6 +9,7 @@ const GalleryComponent = ({items}) => {
         <div className=" movie_page-container m-auto">
             <h1 className="title">Movies</h1>
             <div className="movies_poster-container w-4/5 flex flex-wrap justify-around m-auto gap-y-8">
+                {/*Sliced Array down to 18 Objects for a better UI Experience*/}
                 {[...items].slice(0,18).map((item) => {
                     return(
                         <div className="movie-posters" key={item.id}>
