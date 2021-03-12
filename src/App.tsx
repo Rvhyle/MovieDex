@@ -4,9 +4,9 @@ import {Switch,Route} from 'react-router-dom';
 import Nav from './Components/Nav-Component';
 import Footer from './Components/Footer';
 // Pages
-import Home from './Pages/HomePage';
-import MoviePage from "./Pages/MoviesPage";
-import TVShowPage from "./Pages/TVShowPage";
+import Home from './Pages/HomePageContainer';
+import MoviePageContainer from "./Pages/MoviesPage";
+import TVShowPageContainer from "./Pages/TVShowPageContainer";
 //Styles
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -27,10 +27,10 @@ function App() {
               <Home/>
           </Route>
           <Route exact path ="/movies">
-              <MoviePage/>
+              <MoviePageContainer/>
           </Route>
           <Route exact path ="/shows">
-              <TVShowPage/>
+              <TVShowPageContainer/>
           </Route>
       </Switch>
       <Footer />

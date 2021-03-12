@@ -3,7 +3,7 @@ import GalleryComponent from "../Components/GalleryComponent";
 import {fetchMovieData} from "../Utils/FetchAPI";
 
 
-class MoviePage extends React.Component<any,any> {
+class MoviePageContainer extends React.Component<any,any> {
     constructor(props : any) {
         super(props);
         this.state = {
@@ -45,4 +45,4 @@ class MoviePage extends React.Component<any,any> {
     }
 }
 
-export default MoviePage;
+export default MoviePageContainer;

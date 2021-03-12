@@ -7,7 +7,7 @@ import NewMoviesComponent from "../Components/HomePage/NewMovies-Component";
 import TopRatedComponent from "../Components/HomePage/TopRated_Component";
 
 
-class HomePage extends React.Component<any, any> {
+class HomePageContainer extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -120,4 +120,4 @@ class HomePage extends React.Component<any, any> {
     }
 }
 
-export default HomePage;
+export default HomePageContainer;
