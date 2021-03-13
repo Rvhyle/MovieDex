@@ -5,7 +5,7 @@ import Nav from './Components/Nav-Component';
 import Footer from './Components/Footer';
 // Pages
 import Home from './Pages/HomePageContainer';
-import MoviePageContainer from "./Pages/MoviesPage";
+import MoviePageContainer from "./Pages/MoviesPageContainer";
 import TVShowPageContainer from "./Pages/TVShowPageContainer";
 //Styles
 import "slick-carousel/slick/slick.css";

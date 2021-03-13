@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {fetchMovieData} from "../Utils/FetchAPI";
+import {fetchMovieData} from "../Utils/FeedResource";
 //Components
 import HeaderComponent from "../Components/HomePage/Header-Component";
 import PopularComponent from "../Components/HomePage/Popular-Component";
@@ -11,14 +11,11 @@ class HomePageContainer extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            movieHeader : {},
-            popularMovies : [],
-            newMovies : [],
-            topRated : []
+            movieHeader : {}
         }
+
     }
 
-    //Fetch Data
     /**
      * Fetch movie info for Header Component
      * @param category : String > From MovieDb API
@@ -27,7 +24,7 @@ class HomePageContainer extends React.Component<any, any> {
     getMovieHeader(category : string) {
         let randIndex = Math.floor(Math.random() * 15)
 
-        fetchMovieData(category)
+        fetchMovieData('now_playing')
             .then((res: any) => {
                 this.setState({
                     movieHeader : {
@@ -44,64 +41,11 @@ class HomePageContainer extends React.Component<any, any> {
             })
     }
 
-    /**
-     * Fetch array of movies for Popular Movies Component
-     * @param category : String > From MovieDb API
-     * fetchMovieData returns a promise [Array : objects]
-     */
-    getPopularMovies(category : string) {
-        fetchMovieData(category)
-            .then((res : any) => {
-                this.setState({
-                    popularMovies : res
-                })
-            })
-            .catch((error: any) => {
-                console.log(error)
-            })
-    }
-
-    /**
-     * Fetch array of movies for New Movies Component
-     * @param category : String > From MovieDb API
-     * fetchMovieData returns a promise [Array : objects]
-     */
-    getNewMovies(category : string) {
-        fetchMovieData(category)
-            .then((res: any) => {
-                this.setState({
-                    newMovies : res
-                })
-            })
-            .catch((error: any) => {
-                console.log(error)
-            })
-    }
-
-    /**
-     * Fetch array of movies for Top Movies Component
-     * @param category : String > From MovieDb API
-     * fetchMovieData returns a promise [Array : objects]
-     */
-    getTopMovies(category : string) {
-        fetchMovieData(category)
-            .then((res : any) => {
-                this.setState({
-                    topRated : res
-                })
-            })
-            .catch((error : String) => {
-                console.log(error)
-            })
-    }
 
 
     //Life Cycle
     componentDidMount() {
         this.getMovieHeader('now_playing');
-        this.getPopularMovies('popular');
-        this.getNewMovies('upcoming');
-        this.getTopMovies('top_rated');
     }
 
     componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {
@@ -112,9 +56,9 @@ class HomePageContainer extends React.Component<any, any> {
         return (
             <div>
                 <HeaderComponent header={this.state.movieHeader}/>
-                <PopularComponent popular={this.state.popularMovies}/>
-                <NewMoviesComponent newMovie={this.state.newMovies} />
-                <TopRatedComponent topMovies ={this.state.topRated} />
+                <PopularComponent />
+                <NewMoviesComponent />
+                <TopRatedComponent />
             </div>
         )
     }

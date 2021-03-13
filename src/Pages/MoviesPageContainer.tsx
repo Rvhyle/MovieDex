@@ -3,14 +3,16 @@ import GalleryComponent from "../Components/GalleryComponent";
 import FeedResource from "../Utils/FeedResource";
 
 
-const TVShowPageContainer = () => {
+const MoviePageContainer = () => {
     return (
-        <FeedResource path='tv/on_the_air' render={(data: any) => {
+        <FeedResource path='movie/top_rated' render={(data: any) => {
             return (
                 <GalleryComponent items={data.payLoad}/>
             )
         }}/>
     )
+
 }
 
-export default TVShowPageContainer;
+
+export default MoviePageContainer;

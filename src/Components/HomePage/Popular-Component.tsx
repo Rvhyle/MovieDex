@@ -1,9 +1,9 @@
 import React from 'react';
+import FeedResource from "../../Utils/FeedResource";
 import Slider from "react-slick";
 import LazyLoad from 'react-lazyload';
 
-// @ts-ignore
-const PopularComponent = ({popular}) => {
+const PopularComponent = () => {
 
     //Slider Settings
     const settings = {
@@ -41,26 +41,32 @@ const PopularComponent = ({popular}) => {
     }
 
     //Reduces Array down to 15 Objects
-    let reducedArray = [...popular].slice(0, 15);
 
     return (
-        <div className="slider-container">
-            <h1 className="title">What's Popular</h1>
-            <Slider className="w-4/5 m-auto" {...settings}>
-                {[...reducedArray].map(movie => {
-                    return (
-                        <div key={movie.id}>
-                            <div className="slide-item">
-                                <LazyLoad once>
-                                    <img className="poster" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                                         alt={movie.title}/>
-                                </LazyLoad>
-                            </div>
-                        </div>
-                    )
-                })}
-            </Slider>
-        </div>
+        <FeedResource path='movie/popular' render={(data: any) => {
+            let reducedArray: Array<any> = [...data.payLoad].slice(0, 15);
+
+            return(
+                <div className="slider-container">
+                    <h1 className="title">What's Popular</h1>
+                    <Slider className="w-4/5 m-auto" {...settings}>
+                        {[...reducedArray].map(movie => {
+                            return (
+                                <div key={movie.id}>
+                                    <div className="slide-item">
+                                        <LazyLoad once>
+                                            <img className="poster" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                                                 alt={movie.title}/>
+                                        </LazyLoad>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </Slider>
+                </div>
+            )
+        }}/>
+
     )
 }
 
